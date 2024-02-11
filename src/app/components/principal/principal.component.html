@@ -1,0 +1,8 @@
+<div class="page-container">
+    <h2>Projects</h2>
+
+    <div *ngIf="selectedProject && selectedConsultant">
+        <h4>Selected Consultant: {{ selectedConsultant.username }}</h4>
+        <h4>Selected Project: {{ selectedProject.titre }}</h4>
+    </div>
+</div>

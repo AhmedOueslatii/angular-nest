@@ -1,0 +1,40 @@
+<app-header></app-header>
+<div class="login-container">
+    <div class="glass-container">
+        
+      
+      <img src="assets/unknown-user.png" alt="Unknown User" class="unknown-user-image" />
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-container">
+            <div class="field">
+                <label for="username"> Username</label>
+                <input type="text" pInputText formControlName="username" class="w-full" name="username" placeholder="Type your username" />
+                <small *ngIf="username.invalid && (username.dirty || username.touched)" class="block p-error">
+                    <div *ngIf="username.errors?.['required']">Username is required.</div>
+                </small>
+            </div>
+            <div class="field">
+                <label for="password"> Password </label>
+                <br>
+                <input type="password" pInputText formControlName="password" class="w-full" name="Password" placeholder="Type your password" />
+                <small *ngIf="Password.invalid && (Password.dirty || Password.touched)" class="block p-error">
+                    <div *ngIf="Password.errors?.['required']">Password is required.</div>
+                </small>
+            </div>
+            <div class="field">
+                <div class="input-group mb-3 w-full">
+                    <label class="input-group-text w-full" for="inputGroupSelect01">Your Role</label>
+                    <br>
+                    <select class="form-select w-full" id="inputGroupSelect01" pInputText formControlName="role" name="role">
+                        <option value="Client">Client</option>
+                        <option value="Consultant">Consultant</option>
+                        <option value="Administrator">Administrator</option>
+                    </select>
+                </div>
+                
+            </div>
+            <p-button label="Sign In" [disabled]="loginForm.invalid" type="submit" (Click)="onSubmit()" class="full-width-button" [rounded]="true"></p-button>
+            <div class="mt-2">Forgot your password ? <a routerLink="/forgotpassword">Click Here</a></div>
+        </form>
+      
+    </div>
+</div>

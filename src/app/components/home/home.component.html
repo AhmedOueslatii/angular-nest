@@ -1,0 +1,18 @@
+<div class="flex">
+
+    <app-chart-v2 class="inline-card" *ngIf="isLoggedInAdministrator()"></app-chart-v2>
+
+
+    <app-chart class="inline-card" *ngIf="isLoggedInAdministrator() "> </app-chart>
+    <app-progress class="inline-card" [cardheight]="'250px'" *ngIf="isLoggedInAdministrator()||isLoggedinConsultant() "> </app-progress>
+    <app-projectstatus class="inline-card" *ngIf="isLoggedInClient()"> </app-projectstatus>
+    <app-consultantdetails class="inline-card" *ngIf="isLoggedinConsultant()"> </app-consultantdetails>
+</div>
+<div style="margin-top: 20px;">
+    <app-view class="below-cards" [cardheight]="'800px'" [cardWidth]="'1000px'" *ngIf="isLoggedInAdministrator() "></app-view>
+</div>
+<div style="margin-top: 20px;">
+    <div style="margin-top:20px;">
+        <app-projects class="below-cards" [cardheight]="'800px'" [cardWidth]="'1440px'" *ngIf="isLoggedInAdministrator() "></app-projects>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<p-card header="Table View" [style]="{ width: cardWidth, height: cardheight }">
+    <div class="project-cards-container">
+        <div class="project-card" *ngFor="let project of projects">
+            <p-card [header]="project.titre" class="project-card">
+                <div class="project-details">
+                    <p class="project-info">Start Date: {{ project.date_debut }}</p>
+                    <p class="project-info">End Date: {{ project.date_fin }}</p>
+                    <p class="project-info">Description: {{ project.description }}</p>
+                    <p class="project-info">Title: {{ project.titre }}</p>
+                    <p class="project-info">
+                        Status:
+                        <i [class]="getIconClass(project.status)"></i> {{ project.status }}
+                    </p>
+                    <div class="field">
+                        <label class="input-label">Change Status</label>
+                        <select class="form-select select form-select w-full"  pInputText [(ngModel)]="project.selectedStatus" name="ChangeStatus">
+                            <option value="Not Started">Not Started</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Done">Done</option>
+                        </select>
+                    </div>
+                </div>
+                <p-button label="Submit" (click)="changeStatus(project)"></p-button>
+            </p-card>
+        </div>
+    </div>
+</p-card>

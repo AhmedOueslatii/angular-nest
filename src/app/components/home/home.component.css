@@ -1,0 +1,27 @@
+app-menubar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+   
+}
+
+.flex {
+    display: flex;
+}
+
+.inline-card {
+    margin-right: 10px;
+   
+}
+
+.below-cards {
+    width: 720px;
+    margin-top: 20px;
+   
+}
+
+.nk {
+    margin-top: 20px;
+}
